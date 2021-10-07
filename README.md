@@ -1,4 +1,4 @@
-# Abyiss JavaScript Client - WebSocket & REST APIs
+# Abyiss Python Client - WebSocket & REST APIs
 
 JavaScript node.js client for the Abyiss Cryptocurrency API
 
