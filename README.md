@@ -1,12 +1,43 @@
 [![Tests](https://github.com/Abyiss/abyiss-express-deferred-REST/actions/workflows/nodejs.yml/badge.svg?branch=production)](https://github.com/Abyiss/abyiss-express-deferred-REST/actions/workflows/nodejs.yml)
 
-
 # Abyiss Python Client - WebSocket & REST APIs
 
+Pyton client for the Abyiss Cryptocurrency API.
+
+This API is currently in the beta. As of this writing (10/27/21) the current version is v1.0.6.
+
+While the API is in beta we will offer it as a free service and will not be charging any money. When we transition out of beta we will offer it as a paid service. We suggest signing up for a free account to take advantage of our API and additional offers [Sign Up](https://www.abyiss.com/login) 
+
+
+#### We will be adding the following additional features to this client libary in roughly in this order: *** 
+* **API Key** - This will allow you to access the API with a key attached to your free account.
+* **WebSockets** - This will allow you to subscribe to real time cryptocurrency market data from the API.
+* **pip Package** - This will allow you to install the client as a pip package.
+* **Unified Enpoints** - This will allow you get a unified view of the entire cryptocurrency market.
+* **CSV Export** - This will allow you to export the market data to a CSV file.
+* **More Support** Add support for more currencies, exchanges, markets, symbols, timeframes, functions, indicators and more.
+
+If you have any problems with this libary please open an issue request on [Github](https://github.com/Abyiss/Client-python/issues)
+
+To find more information about Abyiss please visit [Abyiss.com](https://www.abyiss.com/)
+
+For any additional support please email us at [contact@abyiss.com](mailto:contact@abyiss.com)
+
+
+
+# Getting Started
 
 This API provides quick access to market data for storage, analysis, visualization, indicator development, algorithmic trading, strategy backtesting, bot programming, and related software engineering.
 
-It is intended to be used by **coders, developers, technically-skilled traders, data-scientists and financial analysts** for building trading algorithms.
+It is intended to be used by **coders, developers, technically-skilled traders, data-scientists and financial analysts** for powering software.
+
+Currently to access our API you can use the following endpoint: 
+
+## [169.63.179.247/ping](http://169.63.179.247/ping)
+
+
+To learn more about our other endpoints please read below:
+
 
 
 ## Endpoints
@@ -274,3 +305,7 @@ It is intended to be used by **coders, developers, technically-skilled traders, 
 - redirects to https://abyiss.com
 #### ***/abyiss*** 
 - redirects to https://abyiss.com
+
+
+
+## Notes about the REST Client
