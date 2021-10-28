@@ -29,7 +29,7 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
 
 ## Endpoints
 
-### [Ping]( http://169.63.179.247/ping)
+### Ping
 #### ***/ping*** 
 * Returns a 200-status code upon successful query.
 * Returns a static object:
@@ -39,7 +39,7 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     {"ping":"Hello Abyiss"}
     ```
 
-### [Cryptocurrency Exchanges](https://169.63.179.247/exchanges)
+### Cryptocurrency Exchanges
 
 #### ***/v1/exchanges***
 * Returns a 200-status code upon successful query.
