@@ -15,12 +15,7 @@ While the API is in beta we will offer it as a free service and will not be char
 * **CSV Export** - This will allow you to export the market data to a CSV file.
 * **More Support** - Add support for more currencies, exchanges, markets, symbols, timeframes, functions, indicators and more.
 
-If you have any problems with this libary please open an issue request on [Github](https://github.com/Abyiss/Client-python/issues)
-
-To find more information about Abyiss please visit [Abyiss.com](https://www.abyiss.com/)
-
-For any additional support please email us at [contact@abyiss.com](mailto:contact@abyiss.com)
-
+If you have any problems with this libary please open an issue request on [Github](https://github.com/Abyiss/Client-python/issues). To find more information about Abyiss please visit [Abyiss.com](https://www.abyiss.com/). For any additional support please email us at [contact@abyiss.com](mailto:contact@abyiss.com)
 
 
 # Getting Started
