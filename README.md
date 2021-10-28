@@ -2,22 +2,19 @@
 
 # Abyiss Python Client - WebSocket & REST APIs
 
-Pyton client for the Abyiss Cryptocurrency API. This API is currently in the beta. As of this writing (10/28/21) the current API version is v1.0.6.
+Python client for the Abyiss Cryptocurrency API. This API is currently in the beta. The current version of the API is v1.0.6. as of this writing 10/28/21.
 
-While the API is in beta we will offer it as a free service and will not be charging any money. When we transition out of beta we will offer it as a paid service. We suggest signing up for a free account to take advantage of our API and additional offers [Sign Up](https://www.abyiss.com/login) 
-
+While the API is in beta, we will offer it as a free service and will not be charging any money. When we transition out of beta, we will offer it as a paid service. We suggest signing up for a free account to take advantage of our API and additional offers [Sign Up](https://www.abyiss.com/login).
 
 ### We will be adding some of the additional features to this client libary and our API in roughly in this order: 
 * **API Keys** - This will allow you to access the API with a key attached to your free account.
 * **WebSockets** - This will allow you to subscribe to real time cryptocurrency market data from the API.
 * **pip Package** - This will allow you to install the client as a pip package.
-* **Unified Enpoints** - This will allow you get a unified view of the entire cryptocurrency market.
+* **Unified Endpoints** - This will allow you get a unified view of the entire cryptocurrency market.
 * **CSV Export** - This will allow you to export the market data to a CSV file.
 * **More Support** - Add support for more currencies, exchanges, markets, symbols, timeframes, functions, indicators and more.
 
-If you have any problems with this libary please open an issue request on [Github](https://github.com/Abyiss/Client-python/issues). 
-
-To find more information about Abyiss please visit [Abyiss.com](https://www.abyiss.com/). 
+If you have any problems with this library, please open an issue request on [Github](https://github.com/Abyiss/Client-python/issues). To find more information about Abyiss please visit [Abyiss.com](https://www.abyiss.com/). 
 
 For any additional support please email us at [contact@abyiss.com](mailto:contact@abyiss.com).
 
