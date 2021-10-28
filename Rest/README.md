@@ -12,3 +12,6 @@ s = requests.Session()
 print(s.get('http://169.63.179.247/v1/exchanges').json())
 ```
 
+# Notes
+
+Make sure to have python installed and initialized to run the code above
