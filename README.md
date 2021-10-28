@@ -13,7 +13,7 @@ While the API is in beta we will offer it as a free service and will not be char
 * **pip Package** - This will allow you to install the client as a pip package.
 * **Unified Enpoints** - This will allow you get a unified view of the entire cryptocurrency market.
 * **CSV Export** - This will allow you to export the market data to a CSV file.
-* **More Support** Add support for more currencies, exchanges, markets, symbols, timeframes, functions, indicators and more.
+* **More Support** - Add support for more currencies, exchanges, markets, symbols, timeframes, functions, indicators and more.
 
 If you have any problems with this libary please open an issue request on [Github](https://github.com/Abyiss/Client-python/issues)
 
