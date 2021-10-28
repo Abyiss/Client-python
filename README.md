@@ -23,13 +23,13 @@ For any additional support please email us at [contact@abyiss.com](mailto:contac
 
 Currently to ping our API you can use the following URL endpoint: 
 
-### [169.63.179.247](http://169.63.179.247/ping)
+#### [169.63.179.247](http://169.63.179.247/ping)
 
 To learn more about our other endpoints check out our website [Abyiss.com/Documentation](https://abyiss.com/documentation) or continue reading below:
 
-# Endpoints
+## Endpoints
 
-## Ping 
+### Ping 
 [http://169.63.179.247/ping](http://169.63.179.247/ping)
 #### ***/ping*** 
 * Returns a 200-status code upon successful query.
