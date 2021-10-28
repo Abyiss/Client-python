@@ -147,7 +147,7 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     ```
 
 #### ***/v1/{exchange id}/{market id}***
-[http://169.63.179.247/v1/coinbasepro/BTC-USD](http://169.63.179.247/v1/coinbasepro/BTC-USD) 
+[http://169.63.179.247/v1/coinbasepro/btc-usd](http://169.63.179.247/v1/coinbasepro/BTC-USD) 
 * Returns a 200-status code upon successful query.
 * Returns an object with properties about the market.
 * Response object properties:
@@ -180,7 +180,7 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     ```
 
 #### ***/v1/{exchange id}/{market id}/trades***
-[http://169.63.179.247/v1/coinbasepro/BTC-uSD/trades](http://169.63.179.247/v1/coinbasepro/BTC-USD/trades) 
+[http://169.63.179.247/v1/coinbasepro/btc-usd/trades](http://169.63.179.247/v1/coinbasepro/BTC-USD/trades) 
 * Returns a 200-status code upon successful query.
 * Returns an array of recent trades that have occurred on an exchange for that market.
 * Recent trade properties:
