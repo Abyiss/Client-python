@@ -27,9 +27,9 @@ Currently to ping our API you can use the following URL endpoint:
 
 To learn more about our other endpoints check out our website [Abyiss.com/Documentation](https://abyiss.com/documentation) or continue reading below:
 
-## Endpoints
+# Endpoints
 
-### Ping 
+## Ping 
 [http://169.63.179.247/ping](http://169.63.179.247/ping)
 #### ***/ping*** 
 * Returns a 200-status code upon successful query.
