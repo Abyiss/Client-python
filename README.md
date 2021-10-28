@@ -2,7 +2,7 @@
 
 # Abyiss Python Client - WebSocket & REST APIs
 
-Pyton client for the Abyiss Cryptocurrency API. This API is currently in the beta. As of this writing (10/27/21) the current API version is v1.0.6.
+Pyton client for the Abyiss Cryptocurrency API. This API is currently in the beta. As of this writing (10/28/21) the current API version is v1.0.6.
 
 While the API is in beta we will offer it as a free service and will not be charging any money. When we transition out of beta we will offer it as a paid service. We suggest signing up for a free account to take advantage of our API and additional offers [Sign Up](https://www.abyiss.com/login) 
 
@@ -19,7 +19,7 @@ If you have any problems with this libary please open an issue request on [Githu
 
 To find more information about Abyiss please visit [Abyiss.com](https://www.abyiss.com/). 
 
-For any additional support please email us at [contact@abyiss.com](mailto:contact@abyiss.com)
+For any additional support please email us at [contact@abyiss.com](mailto:contact@abyiss.com).
 
 
 # Getting Started
@@ -28,12 +28,12 @@ This API provides quick access to market data for storage, analysis, visualizati
 
 It is intended to be used by **coders, developers, technically-skilled traders, data-scientists and financial analysts** for powering software.
 
-Currently to ping our API you can use the following endpoint: 
+Currently to ping our API you can use the following base url endpoint: 
 
-## [169.63.179.247/ping](http://169.63.179.247/ping)
+## [169.63.179.247](http://169.63.179.247/ping)
 
 
-Our base url is **169.63.179.247**
+To ping our API you can click the link below.
 
 To learn more about our other endpoints please read below:
 
