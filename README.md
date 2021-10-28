@@ -207,36 +207,6 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
             "size":0.00013204,
             "cost":7.967906265599999,
             "side":"buy"
-        },
-        {
-            "exchange":"coinbasepro",
-            "market":"BTC/USD",
-            "id":"225294920",
-            "timestamp":"1634929741466",
-            "price":60344.64,
-            "size":0.00004882,
-            "cost":2.9460253248,
-            "side":"buy"
-        },
-        {
-            "exchange":"coinbasepro",
-            "market":"BTC/USD",
-            "id":"225294922",
-            "timestamp":"1634929741579",
-            "price":60347.03,
-            "size":0.00994284,
-            "cost":600.0208637651999,
-            "side":"buy"
-        },
-        {
-            "exchange":"coinbasepro",
-            "market":"BTC/USD",
-            "id":"225294921",
-            "timestamp":"1634929741579",
-            "price":60344.64,
-            "size":0.00150799,
-            "cost":90.99911367360001,
-            "side":"buy"
         }
     ]
     ```
@@ -270,26 +240,6 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
             "low":63167.99,
             "close":63182.8,
             "volume":7.6732551
-        },
-        {
-            "exchange":"coinbasepro",
-            "market":"BTC/USD",
-            "timestamp":1635171780000,
-            "open":63182.79,
-            "high":63207.06,
-            "low":63157.97,
-            "close":63181.38,
-            "volume":6.05976851
-        },
-        {
-            "exchange":"coinbasepro",
-            "market":"BTC/USD",
-            "timestamp":1635171840000,
-            "open":63176.86,
-            "high":63189.6,
-            "low":63157.97,
-            "close":63161.38,
-            "volume":3.70058086
         }
     ]
     ```
