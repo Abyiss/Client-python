@@ -2,14 +2,12 @@
 
 # Abyiss Python Client - WebSocket & REST APIs
 
-Pyton client for the Abyiss Cryptocurrency API.
-
-This API is currently in the beta. As of this writing (10/27/21) the current version is v1.0.6.
+Pyton client for the Abyiss Cryptocurrency API. This API is currently in the beta. As of this writing (10/27/21) the current API version is v1.0.6.
 
 While the API is in beta we will offer it as a free service and will not be charging any money. When we transition out of beta we will offer it as a paid service. We suggest signing up for a free account to take advantage of our API and additional offers [Sign Up](https://www.abyiss.com/login) 
 
 
-#### We will be adding the following additional features to this client libary in roughly in this order: 
+#### We will be adding some of the additional features to this client libary and our API in roughly in this order: 
 * **API Keys** - This will allow you to access the API with a key attached to your free account.
 * **WebSockets** - This will allow you to subscribe to real time cryptocurrency market data from the API.
 * **pip Package** - This will allow you to install the client as a pip package.
