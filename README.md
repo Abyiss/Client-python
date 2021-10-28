@@ -41,7 +41,7 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     ```
 
 ### Cryptocurrency Exchanges
-
+[http://169.63.179.247/v1/exchanges](http://169.63.179.247/v1/exchanges)
 #### ***/v1/exchanges***
 * Returns a 200-status code upon successful query.
 * Returns an array of all exchanges in the form of market objects that the API offers.
