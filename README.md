@@ -21,20 +21,11 @@ For any additional support please email us at [contact@abyiss.com](mailto:contac
 
 # Getting Started
 
-This API provides quick access to market data for storage, analysis, visualization, indicator development, algorithmic trading, strategy backtesting, bot programming, and related software engineering.
+Currently to ping our API you can use the following URL endpoint: 
 
-It is intended to be used by **coders, developers, technically-skilled traders, data-scientists and financial analysts** for powering software.
+### [169.63.179.247](http://169.63.179.247/ping)
 
-Currently to ping our API you can use the following base url endpoint: 
-
-## [169.63.179.247](http://169.63.179.247/ping)
-
-
-To ping our API you can click the link below.
-
-To learn more about our other endpoints please read below:
-
-
+To learn more about our other endpoints check out our website [Abyiss.com/Documentation](https://abyiss.com/documentation) or continue reading below:
 
 ## Endpoints
 
