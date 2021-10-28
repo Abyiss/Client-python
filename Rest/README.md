@@ -6,9 +6,7 @@ import requests
 
 s = requests.Session()
 
-s.get('http://169.63.179.247/v1/exchanges')
-
-print(s.json())
+print(s.get('http://169.63.179.247/v1/exchanges').json())
 ```
 
 # REST API Notes
