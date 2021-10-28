@@ -74,15 +74,16 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     ```
 
 #### ***/v1/{exchange id}***
-* Returns a 200 status code upon successfuly query.
-* Returns an objects with properties about the exchange.
+[http://169.63.179.247/v1/coinbasepro](http://169.63.179.247/v1/coinbasepro) 
+* Returns a 200-status code upon successfully query.
+* Returns objects with properties about the exchange.
 * Response object properties:
   - **name**: the official name of the exchange.
   - **id**: the id of the exchange used within the api routes.
-  - **url**: the exchange's official website url.
-  - **hasTrades**: a boolean of whether the api can be used to query market trades on the exchange.
-  - **hasAggregates**: a boolean of whether the api can be used to query market candle aggregates on the exchange.
-  - **aggregateTimeframes**: an object containing all of the timeframes supported for market candle aggregates.
+  - **url**: the exchange's official website URL.
+  - **hasTrades**: a Boolean of whether the api can be used to query market trades on the exchange.
+  - **hasAggregates**: a Boolean of whether the api can be used to query market candle aggregates on the exchange.
+  - **aggregateTimeframes**: an object containing all the timeframes supported for market candle aggregates.
 * Example Response:
     ```
     /v1/coinbasepro
@@ -107,11 +108,12 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     ```
 
 #### ***/v1/{exchange id}/status***
-* Returns a 200 status code upon successful query.
+[http://169.63.179.247/v1/coinbasepro/status](http://169.63.179.247/v1/coinbasepro/status) 
+* Returns a 200-status code upon successful query.
 * Returns an object with properties that describe an exchange's status.
 * Response object properties:
   - **status**: The status of the exchange. 'ok' is good.
-  - **updated**: Unix timestamp of last time the exchage's status was updated.
+  - **updated**: Unix timestamp of last time the exchange’s status was updated.
 * Example Response:
     ```
     /v1/coinbasepro/status
@@ -124,7 +126,8 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     ```
 
 #### ***/v1/{exchange id}/markets***
-* Returns a 200 status code upon successful query.
+[http://169.63.179.247/v1/coinbasepro/markets](http://169.63.179.247/v1/coinbasepro/markets) 
+* Returns a 200-status code upon successful query.
 * Returns a list of all market ids on the exchange.
 * Example Response:
     ```
@@ -144,7 +147,8 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     ```
 
 #### ***/v1/{exchange id}/{market id}***
-* Returns a 200 status code upon successful query.
+[http://169.63.179.247/v1/coinbasepro/BTC-USD](http://169.63.179.247/v1/coinbasepro/BTC-USD) 
+* Returns a 200-status code upon successful query.
 * Returns an object with properties about the market.
 * Response object properties:
   - **exchange**: The exchange id the market is on.
@@ -176,13 +180,14 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     ```
 
 #### ***/v1/{exchange id}/{market id}/trades***
-* Returns a 200 status code upon successful query.
+[http://169.63.179.247/v1/coinbasepro/BTC-uSD/trades](http://169.63.179.247/v1/coinbasepro/BTC-USD/trades) 
+* Returns a 200-status code upon successful query.
 * Returns an array of recent trades that have occurred on an exchange for that market.
 * Recent trade properties:
   - **exchange**: The exchange id the trade occurred on.
   - **market**: The market id - what was traded.
   - **id**: The -exchange specific- unique id of the trade. Some exchanges do not have this.
-  - **timestamp**: The unix timestamp that trade was executed.
+  - **timestamp**: The Unix timestamp that trade was executed.
   - **price**: The quote currency price of the market.
   - **size**: The quantity traded.
   - **cost**: The quote cost: size * price.
@@ -237,13 +242,14 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     ```
 
 #### ***/v1/{exchange id}/{market id}/aggregates/{aggregate size}***
-* Returns a 200 status code upon successful query.
+[http://169.63.179.247/v1/coinbasepro/btc-usd/aggregates/1m](http://169.63.179.247/v1/coinbasepro/btc-usd/aggregates/1m) 
+* Returns a 200-status code upon successful query.
 * Returns an array of recent aggregate candlesticks for a given aggregate size on a given market on a given exchange.
 * aggregate size is exchange-specific and are listed in the endpoint: /v1/{exchange}
 * Recent aggregate properties:
   - **exchange**: The exchange id the aggregate was calculated on.
   - **market**: The market id the aggregate was calculated on.
-  - **timestamp**: The unix timestamp for the start of the aggregate calculation, which defines the aggregate's scope.
+  - **timestamp**: The Unix timestamp for the start of the aggregate calculation, which defines the aggregate's scope.
   - **open**: The first, or opening, price of the aggregate's scope.
   - **high**: The highest price recorded within the scope of the aggregate.
   - **low**: The lowest price recorded within the scope of the aggregate.
@@ -293,7 +299,3 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
 - redirects to https://abyiss.com
 #### ***/abyiss*** 
 - redirects to https://abyiss.com
-
-
-
-## Notes about the REST Client
