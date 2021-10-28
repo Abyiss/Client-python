@@ -1,7 +1,7 @@
 
 # Simple REST API Demo
 
-```
+```python
 import requests
 
 s = requests.Session()
