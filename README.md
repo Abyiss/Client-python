@@ -29,9 +29,9 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
 
 ## Endpoints
 
-### Ping
+### [Ping]( http://169.63.179.247/ping)
 #### ***/ping*** 
-* Returns a 200 status code upon successful query.
+* Returns a 200-status code upon successful query.
 * Returns a static object:
   - **ping**: "Hello Abyiss"
 * Example Response:
@@ -39,14 +39,14 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     {"ping":"Hello Abyiss"}
     ```
 
-### Cryptocurrency Exchanges
+### [Cryptocurrency Exchanges](https://169.63.179.247/exchanges)
 
 #### ***/v1/exchanges***
-* Returns a 200 status code upon successful query.
-* Returns an array of all exchanges in the form of market objects that the api offers.
+* Returns a 200-status code upon successful query.
+* Returns an array of all exchanges in the form of market objects that the API offers.
 * Response market object properties:
   - **name**: the official name of the exchange.
-  -  **id**: the id of the exchange used within the api routes.
+  -  **id**: the id of the exchange used within the API routes.
 * Example Response:
     ```
     /v1/exchanges
