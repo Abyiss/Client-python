@@ -29,7 +29,8 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
 
 ## Endpoints
 
-### Ping [http://169.63.179.247/ping](http://169.63.179.247/ping)
+### Ping 
+[http://169.63.179.247/ping](http://169.63.179.247/ping)
 #### ***/ping*** 
 * Returns a 200-status code upon successful query.
 * Returns a static object:
