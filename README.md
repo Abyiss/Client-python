@@ -29,25 +29,23 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
 
 ## Endpoints
 
-### Ping 
-#### ***/ping*** 
-[http://169.63.179.247/ping](http://169.63.179.247/ping)
-* Returns a 200-status code upon successful query.
+![Endpoint](https://img.shields.io/badge/-get-green) ***/ping***
+* Returns a 200 status code upon successful query.
 * Returns a static object:
   - **ping**: "Hello Abyiss"
 * Example Response:
     ```json
-    {"ping":"Hello Abyiss"}
+    {"ping":"Hello from the Abyiss"}
     ```
 
 ### Cryptocurrency Exchanges
-#### ***/v1/exchanges***
-[http://169.63.179.247/v1/exchanges](http://169.63.179.247/v1/exchanges)
-* Returns a 200-status code upon successful query.
-* Returns an array of all exchanges in the form of market objects that the API offers.
+
+![Endpoint](https://img.shields.io/badge/-get-green) ***/v1/exchanges***
+* Returns a 200 status code upon successful query.
+* Returns an array of all exchanges in the form of market objects that the api offers.
 * Response market object properties:
-  - **name**: the official name of the exchange.
-  -  **id**: the id of the exchange used within the API routes.
+  - **name**: String. The official name of the exchange.
+  -  **id**: String. The id of the exchange used within the api routes.
 * Example Response:
     ```
     /v1/exchanges
@@ -73,17 +71,16 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     ]
     ```
 
-#### ***/v1/{exchange id}***
-[http://169.63.179.247/v1/coinbasepro](http://169.63.179.247/v1/coinbasepro) 
-* Returns a 200-status code upon successfully query.
-* Returns objects with properties about the exchange.
+![Endpoint](https://img.shields.io/badge/-get-green) ***/v1/{exchange id}***
+* Returns a 200 status code upon successfuly query.
+* Returns an objects with properties about the exchange.
 * Response object properties:
-  - **name**: the official name of the exchange.
-  - **id**: the id of the exchange used within the api routes.
-  - **url**: the exchange's official website URL.
-  - **hasTrades**: a Boolean of whether the api can be used to query market trades on the exchange.
-  - **hasAggregates**: a Boolean of whether the api can be used to query market candle aggregates on the exchange.
-  - **aggregateTimeframes**: an object containing all the timeframes supported for market candle aggregates.
+  - **name**: String. the official name of the exchange.
+  - **id**: String. the id of the exchange used within the api routes.
+  - **url**: String. the exchange's official website url.
+  - **hasTrades**: Boolean. Whether the api can be used to query market trades on the exchange.
+  - **hasAggregates**: Boolean. Whether the api can be used to query market candle aggregates on the exchange.
+  - **aggregateTimeframes**: Object containing all of the timeframes supported for market candle aggregates.
 * Example Response:
     ```
     /v1/coinbasepro
@@ -107,13 +104,12 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     }
     ```
 
-#### ***/v1/{exchange id}/status***
-[http://169.63.179.247/v1/coinbasepro/status](http://169.63.179.247/v1/coinbasepro/status) 
-* Returns a 200-status code upon successful query.
+![Endpoint](https://img.shields.io/badge/-get-green) ***/v1/{exchange id}/status***
+* Returns a 200 status code upon successful query.
 * Returns an object with properties that describe an exchange's status.
 * Response object properties:
-  - **status**: The status of the exchange. 'ok' is good.
-  - **updated**: Unix timestamp of last time the exchange’s status was updated.
+  - **status**: String. The status of the exchange. 'ok' is good.
+  - **updated**: Int. Unix timestamp of last time the exchage's status was updated.
 * Example Response:
     ```
     /v1/coinbasepro/status
@@ -125,9 +121,8 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     }
     ```
 
-#### ***/v1/{exchange id}/markets***
-[http://169.63.179.247/v1/coinbasepro/markets](http://169.63.179.247/v1/coinbasepro/markets) 
-* Returns a 200-status code upon successful query.
+![Endpoint](https://img.shields.io/badge/-get-green) ***/v1/{exchange id}/markets***
+* Returns a 200 status code upon successful query.
 * Returns a list of all market ids on the exchange.
 * Example Response:
     ```
@@ -146,20 +141,19 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     ]
     ```
 
-#### ***/v1/{exchange id}/{market id}***
-[http://169.63.179.247/v1/coinbasepro/btc-usd](http://169.63.179.247/v1/coinbasepro/BTC-USD) 
-* Returns a 200-status code upon successful query.
+![Endpoint](https://img.shields.io/badge/-get-green) ***/v1/{exchange id}/{market id}***
+* Returns a 200 status code upon successful query.
 * Returns an object with properties about the market.
 * Response object properties:
-  - **exchange**: The exchange id the market is on.
-  - **symbol**: The symbol of the market.
-  - **active**: Boolean whether the market is active on the exchange.
-  - **base**: The base of the market. eg: The quantity that is bought.
-  - **quote**: The quote of the market. eg: The currency being compared.
-  - **percentage**:
-  - **taker**:
-  - **maker**:
-  - **spot**:
+  - **exchange**: String. The exchange id the market is on.
+  - **symbol**: String. The symbol of the market.
+  - **active**: Boolean. Whether the market is active on the exchange.
+  - **base**: String. The base of the market. eg: The quantity that is bought.
+  - **quote**: String. The quote of the market. eg: The currency being compared.
+  - **percentage**: Boolean. 
+  - **taker**: Float. 
+  - **maker**: Float.
+  - **spot**: String. 
 * Example Response:
     ```
     /v1/coinbasepro/BTC-USD
@@ -179,19 +173,18 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
     }
     ```
 
-#### ***/v1/{exchange id}/{market id}/trades***
-[http://169.63.179.247/v1/coinbasepro/btc-usd/trades](http://169.63.179.247/v1/coinbasepro/BTC-USD/trades) 
-* Returns a 200-status code upon successful query.
+![Endpoint](https://img.shields.io/badge/-get-green) ***/v1/{exchange id}/{market id}/trades***
+* Returns a 200 status code upon successful query.
 * Returns an array of recent trades that have occurred on an exchange for that market.
 * Recent trade properties:
-  - **exchange**: The exchange id the trade occurred on.
-  - **market**: The market id - what was traded.
-  - **id**: The -exchange specific- unique id of the trade. Some exchanges do not have this.
-  - **timestamp**: The Unix timestamp that trade was executed.
-  - **price**: The quote currency price of the market.
-  - **size**: The quantity traded.
-  - **cost**: The quote cost: size * price.
-  - **side**: Whether the trade was a buy or sell.
+  - **exchange**: String. The exchange id the trade occurred on.
+  - **market**: String. The market id - what was traded.
+  - **id**: String. The -exchange specific- unique id of the trade. Some exchanges do not have this.
+  - **timestamp**: String. The unix timestamp that trade was executed.
+  - **price**: Float. The quote currency price of the market.
+  - **size**: Float. The quantity traded.
+  - **cost**: Float. The quote cost: size * price.
+  - **side**: String. Whether the trade was a buy or sell.
 * Example Response:
     ```
     /v1/coinbasepro/BTC-USD/trades
@@ -207,27 +200,56 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
             "size":0.00013204,
             "cost":7.967906265599999,
             "side":"buy"
+        },
+        {
+            "exchange":"coinbasepro",
+            "market":"BTC/USD",
+            "id":"225294920",
+            "timestamp":"1634929741466",
+            "price":60344.64,
+            "size":0.00004882,
+            "cost":2.9460253248,
+            "side":"buy"
+        },
+        {
+            "exchange":"coinbasepro",
+            "market":"BTC/USD",
+            "id":"225294922",
+            "timestamp":"1634929741579",
+            "price":60347.03,
+            "size":0.00994284,
+            "cost":600.0208637651999,
+            "side":"buy"
+        },
+        {
+            "exchange":"coinbasepro",
+            "market":"BTC/USD",
+            "id":"225294921",
+            "timestamp":"1634929741579",
+            "price":60344.64,
+            "size":0.00150799,
+            "cost":90.99911367360001,
+            "side":"buy"
         }
     ]
     ```
 
-#### ***/v1/{exchange id}/{market id}/aggregates/{aggregate size}***
-[http://169.63.179.247/v1/coinbasepro/btc-usd/aggregates/1m](http://169.63.179.247/v1/coinbasepro/btc-usd/aggregates/1m) 
-* Returns a 200-status code upon successful query.
+![Endpoint](https://img.shields.io/badge/-get-green) ***/v1/{exchange id}/{market id}/aggregates/{aggregate size}***
+* Returns a 200 status code upon successful query.
 * Returns an array of recent aggregate candlesticks for a given aggregate size on a given market on a given exchange.
 * aggregate size is exchange-specific and are listed in the endpoint: /v1/{exchange}
 * Recent aggregate properties:
-  - **exchange**: The exchange id the aggregate was calculated on.
-  - **market**: The market id the aggregate was calculated on.
-  - **timestamp**: The Unix timestamp for the start of the aggregate calculation, which defines the aggregate's scope.
-  - **open**: The first, or opening, price of the aggregate's scope.
-  - **high**: The highest price recorded within the scope of the aggregate.
-  - **low**: The lowest price recorded within the scope of the aggregate.
-  - **close**: The last, or closing, price within the aggregate's scope.
-  - **volume**: The volume within the aggregate's scope.
+  - **exchange**: String. The exchange id the aggregate was calculated on.
+  - **market**: String. The market id the aggregate was calculated on.
+  - **timestamp**: Int. The unix timestamp for the start of the aggregate calculation, which defines the aggregate's scope.
+  - **open**: Float. The first, or opening, price of the aggregate's scope.
+  - **high**: Float. The highest price recorded within the scope of the aggregate.
+  - **low**: Float. The lowest price recorded within the scope of the aggregate.
+  - **close**: Float. The last, or closing, price within the aggregate's scope.
+  - **volume**: Float. The volume within the aggregate's scope.
 * Example Response:
     ```
-    /v1/coinbasepro/btc-usd/aggregates/1m
+    /v1/coinbasepro/btc-usd/aggregates/1m?limit=3
     ```
     ```json
     [
@@ -240,12 +262,89 @@ To learn more about our other endpoints check out our website [Abyiss.com/Docume
             "low":63167.99,
             "close":63182.8,
             "volume":7.6732551
+        },
+        {
+            "exchange":"coinbasepro",
+            "market":"BTC/USD",
+            "timestamp":1635171780000,
+            "open":63182.79,
+            "high":63207.06,
+            "low":63157.97,
+            "close":63181.38,
+            "volume":6.05976851
+        },
+        {
+            "exchange":"coinbasepro",
+            "market":"BTC/USD",
+            "timestamp":1635171840000,
+            "open":63176.86,
+            "high":63189.6,
+            "low":63157.97,
+            "close":63161.38,
+            "volume":3.70058086
         }
     ]
     ```
 
+![Endpoint](https://img.shields.io/badge/-get-green) ***/v1/{exchange}/{market}/orders***
+* Returns a 200 status code upon successful query
+* Returns a snapshop of the recent order book on an exchange
+* Data returned is in the form of an array of bids and an array of asks
+* Each exchange returns slightly different schemas, so some exchanges may not return all the properties.
+* Order book properties:
+  - **exchange**: String. The exchange id the order book is from.
+  - **market**: String. The market id the order book is about.
+  - **timestamp**: Int. Unix timestamp of the order book
+  - **datetime**: String. The datetime timestamp of the order book.
+  - **nonce**: Int. The serial unique identifier of the order book.
+  - **bids**: Array of arrays of bids in the market [[float, float], [float, float]]
+  - **asks**: Array of arrays of asks in the market [[float, float], [float, float]]
+* Example Response:
+    ```
+    /v1/binance/btc-usdt/orders
+    ```
+    ```json
+    {
+        "exchange":"binance",
+        "market":"BTC/USDT",
+        "nonce":14601360013,
+        "bids":
+        [
+            [
+                61947.91,
+                1.48088
+            ],
+            [
+                61947.9,
+                0.5
+            ],
+            [
+                61944.07,
+                0.44094
+            ]
+        ],
+        "asks":
+        [
+            [
+                61947.92,
+                2.28573
+            ],
+            [
+                61952.89,
+                0.11214
+            ],
+            [
+                61952.9,
+                0.50224
+            ]
+        ]
+    }
+    ```
+
 ### Redirects
-#### ***/*** 
+
+![Endpoint](https://img.shields.io/badge/-get-green) ***/*** 
 - redirects to https://abyiss.com
-#### ***/abyiss*** 
+
+![Endpoint](https://img.shields.io/badge/-get-green) ***/abyiss*** 
 - redirects to https://abyiss.com
