@@ -7,6 +7,7 @@ Python client for the Abyiss Cryptocurrency API. This API is currently in the be
 While the API is in beta, we will offer it as a free service and will not be charging any money. When we transition out of beta, we will offer it as a paid service. We suggest signing up for a free account to take advantage of our API and additional offers [Sign Up](https://www.abyiss.com/login).
 
 ### We will be adding some of the additional features to this client libary and our API in roughly in this order: 
+* **Actual Python Client** - A pip-installable package that wraps all endpoints in functions!
 * **API Keys** - This will allow you to access the API with a key attached to your free account.
 * **WebSockets** - This will allow you to subscribe to real time cryptocurrency market data from the API.
 * **pip Package** - This will allow you to install the client as a pip package.
@@ -23,7 +24,7 @@ For any additional support please email us at [contact@abyiss.com](mailto:contac
 
 Currently to ping our API you can use the following URL endpoint: 
 
-### [169.63.179.247](http://169.63.179.247/ping)
+### [http://devtestapi-us-east-2-cx2-5a0fbb3e5a034dabbd5b291bec1210c6-0000.us-east.containers.appdomain.cloud/](http://devtestapi-us-east-2-cx2-5a0fbb3e5a034dabbd5b291bec1210c6-0000.us-east.containers.appdomain.cloud/ping)
 
 To learn more about our other endpoints check out our website [Abyiss.com/Documentation](https://abyiss.com/documentation) or continue reading below:
 
