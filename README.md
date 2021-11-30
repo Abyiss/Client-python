@@ -1,4 +1,5 @@
-[![Tests](https://github.com/Abyiss/abyiss-express-deferred-REST/actions/workflows/nodejs.yml/badge.svg?branch=production)](https://github.com/Abyiss/abyiss-express-deferred-REST/actions/workflows/nodejs.yml)
+
+### NOT CURRENTLY WORKING
 
 # Abyiss Python Client - WebSocket & REST APIs
 
