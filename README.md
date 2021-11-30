@@ -22,10 +22,11 @@ For any additional support please email us at [contact@abyiss.com](mailto:contac
 
 
 # Getting Started
+### This is the HTTP Endpoint Documentation
 
 Currently to ping our API you can use the following URL endpoint: 
 
-### [http://devtestapi-us-east-2-cx2-5a0fbb3e5a034dabbd5b291bec1210c6-0000.us-east.containers.appdomain.cloud/](http://devtestapi-us-east-2-cx2-5a0fbb3e5a034dabbd5b291bec1210c6-0000.us-east.containers.appdomain.cloud/ping)
+### [http://devtestapi-us-east-2-cx2-5a0fbb3e5a034dabbd5b291bec1210c6-0000.us-east.containers.appdomain.cloud/ping](http://devtestapi-us-east-2-cx2-5a0fbb3e5a034dabbd5b291bec1210c6-0000.us-east.containers.appdomain.cloud/ping)
 
 To learn more about our other endpoints check out our website [Abyiss.com/Documentation](https://abyiss.com/documentation) or continue reading below:
 
