@@ -1,78 +1,115 @@
+
 import requests
 import urllib
 
 
-BASE_URI = "http://devtestapi-us-east-2-cx2-5a0fbb3e5a034dabbd5b291bec1210c6-0000.us-east.containers.appdomain.cloud/"
-BASE_LIMIT = 20
 
 class Client:
 
     # |******************************************************************************************************
     # |      ABYISS PUBLIC CLIENT CLASS
     # |******************************************************************************************************
-    # |> *  
+    # |> *
     # |> *   This is the main interation point that the user will use when using Abyiss' client.
     # |> *   This class contains all of the functions which allows data interation
-    # |> *  
+    # |> *
     # |******************************************************************************************************
-   
 
-    def __init__(self, api_key: str = '', secret_key: str = '', base_api_uri: str = ''):
+    ## global variables
+    BASE_URL = 'http://api.abyiss.com/'
+    API_KEY = ''
+    BASE_LIMIT = 200
+    STATUS_OK = 200
+    ## concating the url
+    KEY_PRE = '?apiKey='
+    VERSION = 'v1/'
+    EXCHANGE = 'exchanges/'
+    EXSTAT = '/status'
+    EXMARKET = '/markets'
+    AGG = '/aggregates/'
+    TRADES = '/trades'
+    QUOTES = '/quotes'
+    ORDERS = '/orders'
+
+    # class constructor
+    def __init__(self, api_key: str = '', base_api_url: str = ''):
         self.api_key = api_key
-        self.secret_key = secret_key
-        if not base_api_uri:
-            self.base_api_uri = BASE_URI
+        if not base_api_url:
+            self.base_api_url = self.BASE_URL
         else:
-            self.base_api_uri = base_api_uri
-        self.session = requests.session()
+            self.base_api_url = base_api_url
 
-    def _build_session(self):
-        # Internal helper for creating a requests `session` with the correctauthentication handling.
+    # creates the base url
+    def build_url(self, mode):
+        print(self.base_api_url + self.VERSION + mode + self.KEY_PRE + self.api_key)
+        return self.base_api_url + self.VERSION + mode + self.KEY_PRE + self.api_key
 
-        self.session.headers.update({
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        })
+    def build_url_limit(self, mode, l):
+        print(self.base_api_url + self.VERSION + mode + self.KEY_PRE + self.api_key + '&limit=' + l)
+        return self.base_api_url + self.VERSION + mode + self.KEY_PRE + self.api_key + '&limit=' + l
 
-    #def _create_api_uri(self, *parts: str):
-        # Internal helper for creating a valid endpoint
-    #    return urljoin(self.base_api_uri. '/'.join(imap(quote, parts)))
 
-    def _handle_response(self, response):
-        # Internal helper to ensure the response is valid
-        print(f"Status code: {response.status_code}")
-        if not str(response.status_code).startswith('2'):
-            raise LookupError(f"Response came back with code {response.status_code}")
+    # checks status returned
+    def status_OK(self, r):
+        if not r.status_code == self.STATUS_OK:
+            print("ERROR CODE: ", r.status_code)
+            return 0;
 
-    def _apply_limit(self, passed_uri:str, limit_qty:int = BASE_LIMIT):
-        # Internal helper to pass limit onto each uri
-        uri = f"{passed_uri}&limit={limit_qty}"
-        return uri
+    # Reference Data
+    def getExchanges(self):
+        r = requests.get(self.build_url(self.EXCHANGE))
+        self.status_OK(r)
+        return r.json()
 
-    def _build_request(self, passed_uri: str, *res, **params):
-        uri = passed_uri
+    def getExchangeDetails(self, exchange):
+        r = requests.get(self.build_url(exchange))
+        self.status_OK(r)
+        return r.json()
 
-        for r in res:
-            uri = '{}/{}'.format(uri, r)
-        if params:
-            uri = '{}?{}'.format(uri, urllib.urlencode(params))
+    def getExchangeStatus(self, exchange):
+        r = requests.get(self.build_url(exchange + self.EXSTAT))
+        self.status_OK(r)
+        return r.json()
 
-        self._build_session()
-        response = self.session.get(uri)
-        self._handle_response(response)
-        return response.json()
+    def getExchangeMarkets(self, exchange):
+        r = requests.get(self.build_url(exchange + self.EXMARKET))
+        self.status_OK(r)
+        return r.json()
 
-    # |*********************************
-    # | > MAIN FUNCTIONS
-    # |*********************************
+    def getMarketDetails(self, exchange, market):
+        r = requests.get(self.build_url(exchange + '/' + market))
+        self.status_OK(r)
+        return r.json()
 
-    def ping(self):
-        uri = (f"{self.base_api_uri}ping")
-        print(f"Getting request from {uri}")
-        return self._build_request(uri)
+    # Market Data
+    def aggregates(self, exchange, market, time, limit):
+        r = requests.get(self.build_url_limit(exchange + '/' + market + self.AGG + time, limit))
+        self.status_OK(r)
+        return r.json()
 
-    def get_exchanges(self, *res, **params):
-        uri = (f"{self.base_api_uri}v1/exchanges")
-        #if limit > 0:
-        #    uri = self._apply_limit(uri, limit)
-        return self._build_request(uri, res, params)
+    def trades(self, exchange, market, limit):
+        r = requests.get(self.build_url_limit(exchange + '/' + market + self.TRADES, limit))
+        self.status_OK(r)
+        return r.json()
+
+    def quotes(self, exchange, market):
+        r = requests.get(self.build_url(exchange + '/' + market + self.QUOTES))
+        self.status_OK(r)
+        return r.json()
+
+    def order(self, exchange, market):
+        r = requests.get(self.build_url(exchange + '/' + market + self.ORDERS))
+        self.status_OK(r)
+        return r.json()
+
+
+client = Client('d1V-97Qg@Lh6xuakUf2e)J^gE(@!*Xo5i06')
+print(client.order('coinbasepro', 'BTC-USD'))
+
+
+
+
+
+
+
+
