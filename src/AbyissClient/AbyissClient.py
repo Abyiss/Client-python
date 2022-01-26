@@ -102,14 +102,3 @@ class Client:
         self.status_OK(r)
         return r.json()
 
-
-client = Client('d1V-97Qg@Lh6xuakUf2e)J^gE(@!*Xo5i06')
-print(client.order('coinbasepro', 'BTC-USD'))
-
-
-
-
-
-
-
-
