@@ -1,4 +1,9 @@
 from setuptools import setup
 
-if __name__ == "__main__":
-    setup()
+setup(name='Abyiss',
+      version='0.1',
+      description='The Abyiss Client Library',
+      author_email='support@abyiss.com'
+      url='abyiss.com'
+      packages['AbyissClient']
+      )
