@@ -41,11 +41,9 @@ class Client:
 
     # creates the base url
     def build_url(self, mode):
-        print(self.base_api_url + self.VERSION + mode + self.KEY_PRE + self.api_key)
         return self.base_api_url + self.VERSION + mode + self.KEY_PRE + self.api_key
 
     def build_url_limit(self, mode, l):
-        print(self.base_api_url + self.VERSION + mode + self.KEY_PRE + self.api_key + '&limit=' + l)
         return self.base_api_url + self.VERSION + mode + self.KEY_PRE + self.api_key + '&limit=' + l
 
 
@@ -53,7 +51,7 @@ class Client:
     def status_OK(self, r):
         if not r.status_code == self.STATUS_OK:
             print("ERROR CODE: ", r.status_code)
-            return 0;
+            return 0
 
     # Reference Data
     def getExchanges(self):
