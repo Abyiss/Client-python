@@ -3,7 +3,7 @@
 
 Python Client for Abyiss Cryptocurrency APIs.
 
-To use our API please sign up for a free account here [Sign Up](https://www.abyiss.com/signin) and find your API Key in your [Dashboard](https://www.abyiss.com/dashboard).
+To use our API please sign up for a free account here: [Sign Up](https://www.abyiss.com/signin), and find your API Key in your [Dashboard](https://www.abyiss.com/dashboard).
 
 ### We will be adding some of the additional features to this client libary and our API in roughly in this order: 
 * **WebSockets** - This will allow you to subscribe to real time cryptocurrency market data from the API.
@@ -15,16 +15,14 @@ To use our API please sign up for a free account here [Sign Up](https://www.abyi
 If you have any problems with this library, please open an issue request on [Github](https://github.com/Abyiss/Client-python/issues) or for any additional support please email us at [support@abyiss.com](mailto:support@abyiss.com).
 
 
-# Getting Started
-
 To learn more about our API check out our [Documentation](https://docs.abyiss.com/) or continue reading below:
 
 
+# Getting Started
 
 ### Install Abyiss Python Library
 
 ``` pip install abyiss ```
-
 
 
 ### Quick Start - Copy & Paste Code 
@@ -72,19 +70,16 @@ client = Abyiss.Client(apiKey)
 
 ### Get Exchanges
 
-```
+```python
 exchanges = client.getExchanges()
 ```
 
 * Returns a 200 status code upon successful query.
-* Returns an array of all exchanges in the form of market objects that the api offers.
-* Response market object properties:
+* Returns an array of all supported exchanges in the form of market objects.
+* Response Attributes:
   - **name**: String. The official name of the exchange.
-  -  **id**: String. The id of the exchange used within the api routes.
-* Example Response:
-    ```
-    /v1/exchanges
-    ```
+  -  **id**: String. Unique exchange identifier used by Abyiss.
+* Response Object:
     ```json
     [
         {
@@ -106,3 +101,5 @@ exchanges = client.getExchanges()
     ]
     ```
 
+
+### Get Exchange Details
