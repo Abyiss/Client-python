@@ -26,10 +26,9 @@ To learn more about our API check out our [Documentation](https://docs.abyiss.co
 ``` pip install abyiss ```
 
 
+
 ### Quick Start - Copy & Paste Code 
-
-
-```
+```python
 from Abyiss import Abyiss
 
 
@@ -62,12 +61,11 @@ orderbook = client.orderBook("coinbasepro", "BTC-USDT")
 
 ### Abyiss Client
 
-```
+```python
 apiKey = "(s2nKF1s2S^Xj6(43z6x6VCh18Ao5Qhu@*6" 
 
 # Create an instance of the Abyiss class with your API key
 client = Abyiss.Client(apiKey) 
-
 ```
 * Returns a 200 status code upon successful query.
 
@@ -76,7 +74,6 @@ client = Abyiss.Client(apiKey)
 
 ```
 exchanges = client.getExchanges()
-
 ```
 
 * Returns a 200 status code upon successful query.
@@ -108,3 +105,4 @@ exchanges = client.getExchanges()
         }
     ]
     ```
+
