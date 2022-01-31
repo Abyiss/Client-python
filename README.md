@@ -57,3 +57,54 @@ orderbook = client.orderBook("coinbasepro", "BTC-USDT")
 
 ```
 
+
+# More Details
+
+### Abyiss Client
+
+```
+apiKey = "(s2nKF1s2S^Xj6(43z6x6VCh18Ao5Qhu@*6" 
+
+# Create an instance of the Abyiss class with your API key
+client = Abyiss.Client(apiKey) 
+
+```
+* Returns a 200 status code upon successful query.
+
+
+### Get Exchanges
+
+```
+exchanges = client.getExchanges()
+
+```
+
+* Returns a 200 status code upon successful query.
+* Returns an array of all exchanges in the form of market objects that the api offers.
+* Response market object properties:
+  - **name**: String. The official name of the exchange.
+  -  **id**: String. The id of the exchange used within the api routes.
+* Example Response:
+    ```
+    /v1/exchanges
+    ```
+    ```json
+    [
+        {
+            "name":"Binance",
+            "id":"binance"
+        },
+        {
+            "name":"Binance US",
+            "id":"binanceus"
+        },
+        {
+            "name":"Coinbase Pro",
+            "id":"coinbasepro"
+        },
+        {
+            "name":"BitBay",
+            "id":"bitbay"
+        }
+    ]
+    ```
