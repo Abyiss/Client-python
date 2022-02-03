@@ -15,7 +15,7 @@ class Client:
     # |******************************************************************************************************
 
     ## global variables
-    BASE_URL = 'http://api.abyiss.com/'
+    BASE_URL = 'https://api.abyiss.com/'
     API_KEY = ''
     BASE_LIMIT = 200
     STATUS_OK = 200
