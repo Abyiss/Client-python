@@ -197,9 +197,6 @@ exchangeMarkets = client.getExchangeMarkets("exchange id*")
   - **pair id**: String. Unique Crypto Pair identifier used by the exchange.
 
 * Response Object:
-    ```
-    /v1/coinbasepro/markets
-    ```
     ```json
     [
         "OGN/BTC",
