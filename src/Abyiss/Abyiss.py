@@ -25,8 +25,12 @@ class Client:
     EXCHANGE = 'exchanges/'
     EXSTAT = '/status'
     EXMARKET = '/markets'
+    CURRENT_PRICE = '/currentPrice'
+    SNAPSHOT = '/snapshot'
     AGG = '/aggregates/'
+    LAST_AGG = './lastAggregate'
     TRADES = '/trades'
+    LAST_TRADE = './lastTrade'
     QUOTES = '/quotes'
     ORDERS = '/orders'
 
@@ -48,54 +52,74 @@ class Client:
 
     # checks status returned
     def status_OK(self, r):
-        if not r.status_code == self.STATUS_OK:
-            print("ERROR CODE: ", r.status_code)
+        if not r == self.STATUS_OK:
+            print("ERROR CODE: ", r)
             return 0
 
     # Reference Data
     def getExchanges(self):
         r = requests.get(self.build_url(self.EXCHANGE))
-        self.status_OK(r)
+        self.status_OK(r.status_code)
         return r.json()
 
     def getExchangeDetails(self, exchange):
         r = requests.get(self.build_url(exchange))
-        self.status_OK(r)
+        self.status_OK(r.status_code)
         return r.json()
 
     def getExchangeStatus(self, exchange):
         r = requests.get(self.build_url(exchange + self.EXSTAT))
-        self.status_OK(r)
+        self.status_OK(r.status_code)
         return r.json()
 
     def getExchangeMarkets(self, exchange):
         r = requests.get(self.build_url(exchange + self.EXMARKET))
-        self.status_OK(r)
+        self.status_OK(r.status_code)
         return r.json()
 
     def getMarketDetails(self, exchange, market):
         r = requests.get(self.build_url(exchange + '/' + market))
-        self.status_OK(r)
+        self.status_OK(r.status_code)
         return r.json()
 
     # Market Data
+    def currentPrice(self, exchange, market):
+        r = requests.get(self.build_url(exchange + '/' + market + self.CURRENT_PRICE))
+        self.status_OK(r.status_code)
+        return r.json()
+
+    def snapshot(self, exchange, market):
+        r = requests.get(self.build_url(exchange + '/' + market + self.SNAPSHOT))
+        self.status_OK(r.status_code)
+        return r.json()
+    
     def aggregates(self, exchange, market, time, limit):
         r = requests.get(self.build_url_limit(exchange + '/' + market + self.AGG + time, limit))
-        self.status_OK(r)
+        self.status_OK(r.status_code)
+        return r.json()
+
+    def lastAggregate(self, exchange, market, time, limit):
+        r = requests.get(self.build_url_limit(exchange + '/' + market + self.LAST_AGG + time, limit))
+        self.status_OK(r.status_code)
         return r.json()
 
     def trades(self, exchange, market, limit):
         r = requests.get(self.build_url_limit(exchange + '/' + market + self.TRADES, limit))
-        self.status_OK(r)
+        self.status_OK(r.status_code)
+        return r.json()
+
+    def lastTrade(self, exchange, market, limit):
+        r = requests.get(self.build_url_limit(exchange + '/' + market + self.LAST_TRADE, limit))
+        self.status_OK(r.status_code)
         return r.json()
 
     def quotes(self, exchange, market):
         r = requests.get(self.build_url(exchange + '/' + market + self.QUOTES))
-        self.status_OK(r)
+        self.status_OK(r.status_code)
         return r.json()
 
     def orderBook(self, exchange, market):
         r = requests.get(self.build_url(exchange + '/' + market + self.ORDERS))
-        self.status_OK(r)
+        self.status_OK(r.status_code)
         return r.json()
 

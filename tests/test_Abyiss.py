@@ -1,9 +1,7 @@
 import pytest, sys
-from AbyissClient import AbyissClient
-#import AbyissClient.client
+from Abyiss import Abyiss
 
-#client = Client()
-AbyissClient = AbyissClient.Client()
+AbyissClient = Abyiss.Client()
 
 @pytest.fixture
 def capture_stdout(monkeypatch):
