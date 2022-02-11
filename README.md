@@ -5,7 +5,7 @@ Python Client for Abyiss Cryptocurrency APIs.
 
 To use our API please sign up for a free account here: [Sign Up](https://www.abyiss.com/signin), and find your API Key in your [Dashboard](https://www.abyiss.com/dashboard).
 
-## Please use our official [Documentation](https://docs.abyiss.com/). It contains the latest updates.
+## Please use our official [Documentation](https://docs.abyiss.com/). It contains all the latest updates.
 
 ### We will be adding some of the additional features to this client libary and our API in roughly in this order: 
 * **WebSockets** - This will allow you to subscribe to real time cryptocurrency market data from the API.
