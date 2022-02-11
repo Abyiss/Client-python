@@ -28,9 +28,9 @@ class Client:
     CURRENT_PRICE = '/currentPrice'
     SNAPSHOT = '/snapshot'
     AGG = '/aggregates/'
-    LAST_AGG = './lastAggregate'
+    LAST_AGG = '/lastAggregate'
     TRADES = '/trades'
-    LAST_TRADE = './lastTrade'
+    LAST_TRADE = '/lastTrade'
     QUOTES = '/quotes'
     ORDERS = '/orders'
 
@@ -93,23 +93,29 @@ class Client:
         self.status_OK(r.status_code)
         return r.json()
     
-    def aggregates(self, exchange, market, time, limit):
-        r = requests.get(self.build_url_limit(exchange + '/' + market + self.AGG + time, limit))
+    def aggregates(self, exchange, market, time, limit = False):
+        if not limit: 
+            r = requests.get(self.build_url(exchange + '/' + market + self.AGG + time))
+        else: 
+            r = requests.get(self.build_url_limit(exchange + '/' + market + self.AGG + time, limit))
         self.status_OK(r.status_code)
         return r.json()
 
-    def lastAggregate(self, exchange, market, time, limit):
-        r = requests.get(self.build_url_limit(exchange + '/' + market + self.LAST_AGG + time, limit))
+    def lastAggregate(self, exchange, market, time):
+        r = requests.get(self.build_url(exchange + '/' + market + self.LAST_AGG + '/' + time))
         self.status_OK(r.status_code)
         return r.json()
 
-    def trades(self, exchange, market, limit):
-        r = requests.get(self.build_url_limit(exchange + '/' + market + self.TRADES, limit))
+    def trades(self, exchange, market, limit = False):
+        if not limit:
+            r = requests.get(self.build_url(exchange + '/' + market + self.TRADES))
+        else:
+            r = requests.get(self.build_url_limit(exchange + '/' + market + self.TRADES, limit))
         self.status_OK(r.status_code)
         return r.json()
 
-    def lastTrade(self, exchange, market, limit):
-        r = requests.get(self.build_url_limit(exchange + '/' + market + self.LAST_TRADE, limit))
+    def lastTrade(self, exchange, market):
+        r = requests.get(self.build_url(exchange + '/' + market + self.LAST_TRADE))
         self.status_OK(r.status_code)
         return r.json()
 
