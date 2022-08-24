@@ -1,5 +1,14 @@
 import requests
 
+class StatusError(Exception):
+    def __init__(self, message, errors):
+        super().__init__(message)
+        self.errors = errors
+
+class InvalidApiKey(Exception):
+    def __init__(self):
+        super.__init__("Invalid API Key")
+
 class Client:
 
     # |******************************************************************************************************
@@ -49,7 +58,9 @@ class Client:
     # checks status returned
     def parse(self, r):
         if not r.status_code == 200:
-            raise 
+            if r.status_code == 401:
+                raise InvalidApiKey()
+            raise StatusError(f'Received status: {r.status_code}', r.status_code)
         return r.json()
 
     # Reference Data
