@@ -1,7 +1,13 @@
-
 import requests
 
+class StatusError(Exception):
+    def __init__(self, message, errors):
+        super().__init__(message)
+        self.errors = errors
 
+class InvalidApiKey(Exception):
+    def __init__(self):
+        super.__init__("Invalid API Key")
 
 class Client:
 
@@ -18,7 +24,6 @@ class Client:
     BASE_URL = 'https://api.abyiss.com/'
     API_KEY = ''
     BASE_LIMIT = 200
-    STATUS_OK = 200
     ## concating the url
     KEY_PRE = '?apiKey='
     VERSION = 'v1/'
@@ -51,81 +56,70 @@ class Client:
 
 
     # checks status returned
-    def status_OK(self, r):
-        if not r == self.STATUS_OK:
-            print("ERROR CODE: ", r)
-            return 0
+    def parse(self, r):
+        if not r.status_code == 200:
+            if r.status_code == 401:
+                raise InvalidApiKey()
+            raise StatusError(f'Received status: {r.status_code}', r.status_code)
+        return r.json()
 
     # Reference Data
     def getExchanges(self):
         r = requests.get(self.build_url(self.EXCHANGE))
-        self.status_OK(r.status_code)
-        return r.json()
+        return self.parse(r)
 
     def getExchangeDetails(self, exchange):
         r = requests.get(self.build_url(exchange))
-        self.status_OK(r.status_code)
-        return r.json()
+        return self.parse(r)
 
     def getExchangeStatus(self, exchange):
         r = requests.get(self.build_url(exchange + self.EXSTAT))
-        self.status_OK(r.status_code)
-        return r.json()
+        return self.parse(r)
 
     def getExchangeMarkets(self, exchange):
         r = requests.get(self.build_url(exchange + self.EXMARKET))
-        self.status_OK(r.status_code)
-        return r.json()
+        return self.parse(r)
 
     def getMarketDetails(self, exchange, market):
         r = requests.get(self.build_url(exchange + '/' + market))
-        self.status_OK(r.status_code)
-        return r.json()
+        return self.parse(r)
 
     # Market Data
     def currentPrice(self, exchange, market):
         r = requests.get(self.build_url(exchange + '/' + market + self.CURRENT_PRICE))
-        self.status_OK(r.status_code)
-        return r.json()
+        return self.parse(r)
 
     def snapshot(self, exchange, market):
         r = requests.get(self.build_url(exchange + '/' + market + self.SNAPSHOT))
-        self.status_OK(r.status_code)
-        return r.json()
+        return self.parse(r)
     
     def aggregates(self, exchange, market, time, limit = False):
         if not limit: 
             r = requests.get(self.build_url(exchange + '/' + market + self.AGG + time))
         else: 
             r = requests.get(self.build_url_limit(exchange + '/' + market + self.AGG + time, limit))
-        self.status_OK(r.status_code)
-        return r.json()
+        return self.parse(r)
 
     def lastAggregate(self, exchange, market, time):
         r = requests.get(self.build_url(exchange + '/' + market + self.LAST_AGG + '/' + time))
-        self.status_OK(r.status_code)
-        return r.json()
+        return self.parse(r)
 
     def trades(self, exchange, market, limit = False):
         if not limit:
             r = requests.get(self.build_url(exchange + '/' + market + self.TRADES))
         else:
             r = requests.get(self.build_url_limit(exchange + '/' + market + self.TRADES, limit))
-        self.status_OK(r.status_code)
-        return r.json()
+        return self.parse(r)
 
     def lastTrade(self, exchange, market):
         r = requests.get(self.build_url(exchange + '/' + market + self.LAST_TRADE))
-        self.status_OK(r.status_code)
-        return r.json()
+        return self.parse(r)
 
     def quotes(self, exchange, market):
         r = requests.get(self.build_url(exchange + '/' + market + self.QUOTES))
-        self.status_OK(r.status_code)
-        return r.json()
+        return self.parse(r)
 
     def orderBook(self, exchange, market):
         r = requests.get(self.build_url(exchange + '/' + market + self.ORDERS))
-        self.status_OK(r.status_code)
-        return r.json()
+        return self.parse(r)
 
